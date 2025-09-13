@@ -69,7 +69,7 @@ export default function QuotePage() {
       phone: formData.get("phone"),
       company: formData.get("company"),
       projectType: projectType,
-      budget: budget,
+      budget: budget || formData.get("budget"),
       timeline: formData.get("timeline"),
       description: formData.get("description"),
       features: features,
@@ -187,7 +187,7 @@ export default function QuotePage() {
 
                 <div className="space-y-2">
                   <Label htmlFor="budget">Budget Range</Label>
-                  <Select value={budget} onValueChange={setBudget}>
+                  <Select value={budget} onValueChange={setBudget} name="budget">
                     <SelectTrigger>
                       <SelectValue placeholder="Select your budget range" />
                     </SelectTrigger>
