@@ -2,7 +2,8 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -14,10 +15,46 @@ import { ArrowLeft, Send, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export default function QuotePage() {
+  const searchParams = useSearchParams()
   const [projectType, setProjectType] = useState("")
+  const [budget, setBudget] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState("")
+
+  useEffect(() => {
+    const service = searchParams.get("service")
+    const price = searchParams.get("price")
+    const type = searchParams.get("type")
+
+    if (service && price) {
+      // Map service names to project types
+      const serviceMapping: { [key: string]: string } = {
+        "Landing Page / Portfolio": "landing-page",
+        "Business Website": "business-website",
+        "E-Commerce Website": "ecommerce",
+        "Basic App": "basic-app",
+        "Dynamic App": "dynamic-app",
+        "Advanced App": "advanced-app",
+      }
+
+      // Map price ranges to budget options
+      const priceMapping: { [key: string]: string } = {
+        "₹8,000 – ₹15,000": "15k-35k",
+        "₹20,000 – ₹35,000": "15k-35k",
+        "₹40,000 – ₹75,000": "35k-75k",
+        "₹25,000 – ₹40,000": "35k-75k",
+        "₹50,000 – ₹1,00,000": "75k-1l",
+        "₹1,20,000+": "1l-plus",
+      }
+
+      const mappedProjectType = serviceMapping[service] || "custom"
+      const mappedBudget = priceMapping[price] || "discuss"
+
+      setProjectType(mappedProjectType)
+      setBudget(mappedBudget)
+    }
+  }, [searchParams])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,7 +69,7 @@ export default function QuotePage() {
       phone: formData.get("phone"),
       company: formData.get("company"),
       projectType: projectType,
-      budget: formData.get("budget"),
+      budget: budget,
       timeline: formData.get("timeline"),
       description: formData.get("description"),
       features: features,
@@ -150,7 +187,7 @@ export default function QuotePage() {
 
                 <div className="space-y-2">
                   <Label htmlFor="budget">Budget Range</Label>
-                  <Select name="budget">
+                  <Select value={budget} onValueChange={setBudget}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select your budget range" />
                     </SelectTrigger>

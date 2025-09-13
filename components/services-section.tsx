@@ -91,7 +91,9 @@ export function ServicesSection() {
                     ))}
                   </ul>
 
-                  <Link href="/quote">
+                  <Link
+                    href={`/quote?service=${encodeURIComponent(service.title)}&price=${encodeURIComponent(service.price)}&type=website`}
+                  >
                     <Button
                       className="w-full bg-transparent hover:bg-primary hover:text-primary-foreground transition-colors"
                       variant="outline"
@@ -136,7 +138,9 @@ export function ServicesSection() {
                     ))}
                   </ul>
 
-                  <Link href="/quote">
+                  <Link
+                    href={`/quote?service=${encodeURIComponent(service.title)}&price=${encodeURIComponent(service.price)}&type=app`}
+                  >
                     <Button
                       className="w-full bg-transparent hover:bg-secondary hover:text-secondary-foreground transition-colors"
                       variant="outline"
