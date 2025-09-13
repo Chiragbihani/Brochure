@@ -1,30 +1,114 @@
-# Brochure page functionality
+# 📄 Brochure Page
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+[![Live Demo](https://img.shields.io/badge/View-Live%20Demo-blue)](https://chirag-bihani.vercel.app)
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/chiragbihanis-projects/v0-brochure-page-functionality)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/8kN8R5dRtk9)
+A brochure web page built with **Next.js** and **TypeScript**, featuring email integration using the **Resend API**.  
 
-## Overview
+---
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## 🛠 Tech Stack
 
-## Deployment
+- **Framework:** Next.js (React Framework)  
+- **Language:** TypeScript  
+- **Email Service:** Resend.com API  
+- **Styling:** (Tailwind CSS / CSS Modules / Styled Components) – update based on your usage  
+- **Deployment:** Vercel  
 
-Your project is live at:
+---
 
-**[https://vercel.com/chiragbihanis-projects/v0-brochure-page-functionality](https://vercel.com/chiragbihanis-projects/v0-brochure-page-functionality)**
+## ✨ Features
 
-## Build your app
+- Clean and responsive brochure-style design  
+- Contact form with email functionality via **Resend API**  
+- Mobile-first responsive UI  
+- Easy to customize content and styles  
+- Deployed with CI/CD on Vercel  
 
-Continue building your app on:
+---
 
-**[https://v0.app/chat/projects/8kN8R5dRtk9](https://v0.app/chat/projects/8kN8R5dRtk9)**
+## 📂 Project Structure
 
-## How It Works
+```
+/
+├── components/     # Reusable UI components
+├── pages/          # Next.js pages
+├── public/         # Static assets (images, icons, etc.)
+├── styles/         # Global and component-level styles
+├── utils/          # Helper functions
+├── types/          # TypeScript types & interfaces
+└── README.md       # Project documentation
+```
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- Node.js (>= 18.x recommended)  
+- npm or yarn  
+- Resend API key (for email functionality)  
+
+### Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/Chiragbihani/Brochure.git
+
+# Navigate into the project directory
+cd Brochure
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Add your Resend API key in .env.local
+RESEND_API_KEY=your_api_key_here
+
+# Run the dev server
+npm run dev
+# or
+yarn dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🚀 Deployment
+
+This brochure page is deployed on [Vercel](https://vercel.com/).  
+Configure environment variables (`RESEND_API_KEY`) in the Vercel dashboard.  
+
+---
+
+## 📸 Screenshots
+
+![Screenshot](public/Landing_Page)
+
+
+---
+
+## 🧠 Learnings
+
+- Integrating **Resend API** with Next.js for email functionality  
+- Structuring a brochure page with TypeScript and reusable components  
+- Deploying projects with environment variables on Vercel  
+
+---
+
+## 📬 Contact
+
+Let’s connect:  
+
+- **Email:** chiragbihani131206@gmail.com  
+- **GitHub:** [github.com/Chiragbihani](https://github.com/Chiragbihani)  
+- **Instagram:** [@chirag_bihani](https://instagram.com/chirag_bihani)  
+
+---
+
+## ⚖️ License
+
+This project is licensed under the **MIT License** – free to use and adapt.
+
+---
